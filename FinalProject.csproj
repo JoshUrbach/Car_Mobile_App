@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Page1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Pages\Page1.xaml" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <None Remove="Images\GenericCar.jpg" />
+    <None Remove="Images\GTR.jpg" />
+    <None Remove="Images\Huracan.JPG" />
+    <None Remove="Images\M3.JPG" />
+    <None Remove="Images\RS7.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\GenericCar.jpg" />
+    <EmbeddedResource Include="Images\GTR.jpg" />
+    <EmbeddedResource Include="Images\Huracan.JPG" />
+    <EmbeddedResource Include="Images\M3.JPG" />
+    <EmbeddedResource Include="Images\RS7.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\AddCarPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\CarSpecs.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\EditCarPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
