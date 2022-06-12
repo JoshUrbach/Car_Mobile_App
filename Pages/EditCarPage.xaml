@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.EditCarPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,0,0">
+            <StackLayout>
+                <Image Source="{Binding ImageURI}"/>
+                <Entry x:Name="enteredBrand"
+                       Placeholder="Enter Brand"
+                       Text="{Binding Brand}"/>
+                <Entry Placeholder="Enter Model"
+                       Text="{Binding Model}"/>
+                <Entry Placeholder="Enter Price"
+                       Text="{Binding Price}"/>
+                <Entry Placeholder="Enter Horsepower"
+                       Text="{Binding Horsepower}"/>
+                <Entry Placeholder="Enter Torque"
+                       Text="{Binding Torque}"/>
+                <Entry Placeholder="Enter Engine"
+                       Text="{Binding Engine}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel"
+                        HorizontalOptions="Start"
+                        Clicked="Cancel_Button_Clicked"/>
+                <Button Text="OK"
+                        HorizontalOptions="EndAndExpand"
+                        Clicked="OK_Button_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

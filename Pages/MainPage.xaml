@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Car" Order="Secondary" Activated="NewCar_Activated"/>
+        <ToolbarItem Text="Edit Car" Order="Secondary" Activated="EditCar_Activated"/>
+        <ToolbarItem Text="Show Details" Order="Secondary" Activated="ShowDetails_Activated"/>
+        <ToolbarItem Text="Delete Car" Order="Secondary" Activated="DeleteCar_Activated"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+        <SearchBar x:Name="SearchBar"
+                   Placeholder="Search Brand ..."
+                   HorizontalOptions="StartAndExpand"
+                   TextChanged="SearchBar_TextChanged"/>
+        <ListView x:Name="myList"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="Blue"
+                  Margin="5,5,5,5"
+                  HasUnevenRows="True"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="myList_Refreshing"
+                  ItemTapped="myList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="0,5,0,5">
+                            <Image Source="{Binding ImageURI}"/>
+                            <StackLayout Orientation="Vertical"
+                                         HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Brand}" 
+                                       TextColor="Black"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Model}"
+                                       TextColor="Black"
+                                       FontSize="10"/>
+                            </StackLayout>
+                            <Label Text="{Binding Price}"
+                                   FontSize="24"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

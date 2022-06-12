@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.CarSpecs"
+             Title="{Binding Brand}"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <StackLayout Padding="5,0,5,0">
+            <StackLayout Orientation="Horizontal">
+                <Label TextColor="Black"
+                       Text="Horsepower: "
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <Label TextColor="Blue"
+                       Text="{Binding Horsepower}"
+                       FontSize="Large"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label TextColor="Black"
+                       Text="Torque:           "
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <Label TextColor="Blue"
+                       Text="{Binding Torque}"
+                       FontSize="Large"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label TextColor="Black"
+                       Text="Engine:           "
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <Label TextColor="Blue"
+                       Text="{Binding Engine}"
+                       FontSize="Large"/>
+            </StackLayout>
+            <Button Margin="0,0,0,10"
+                    Text="Close"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
